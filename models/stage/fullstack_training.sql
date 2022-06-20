@@ -7,3 +7,4 @@ with fullstack_training as (
 )
 
 select * from fullstack_training
+
