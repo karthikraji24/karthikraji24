@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: abcdef
+    database: KARTHIK
+    schema: TECHIGAI
+    tables: 
+      - name: data_training
+      - name: training
+
