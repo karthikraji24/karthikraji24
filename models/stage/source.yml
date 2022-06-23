@@ -7,9 +7,27 @@ sources:
     tables: 
       - name: data_training
       - name: training
+        columns: 
+          - name: COUSEID
+            tests: 
+              - unique
+              - not_null
         freshness: # default freshness
-          warn_after: {count: 6, period: hour}
-          error_after: {count: 12, period: hour}
-        loaded_at_field: _etl_loaded_at
+          warn_after: {count: 10, period: hour}
+          error_after: {count: 30, period: hour}
+        loaded_at_field: endtime
+
+models:
+  - name: data_training
+    columns:
+      - name: course_id
+        tests:
+          - unique
+          - not_null
+      - name: grade
+        tests:
+          - accepted_values:
+              values: ['A+']
+
 
 
